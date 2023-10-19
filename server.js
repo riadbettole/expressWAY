@@ -5,8 +5,10 @@ const puppeteer = require("puppeteer");
 const app = express()
 const PORT = 3000
 
-app.use(cors()); // Enable CORS for all routes
+const home = require("./routes/home.js");
 
+app.use(cors()); // Enable CORS for all routes
+app.use("/home", home);
 
 /**
  * Scrapes product data from a given URL using Puppeteer.
